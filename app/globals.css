@@ -63,6 +63,8 @@
   --color-fill-strong: var(--fill-strong);
   --color-success: var(--success);
   --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
   --color-hairline: var(--hairline);
 
   /* Radius scale — soft, macOS-like rounding */
@@ -109,6 +111,10 @@
   /* Accent status color — iOS system green */
   --success: #34c759;
   --success-foreground: #ffffff;
+
+  /* Warning — iOS system orange */
+  --warning: #ff9500;
+  --warning-foreground: #ffffff;
 
   --destructive: #ff3b30;
 
@@ -171,6 +177,10 @@
   --success: #34c759;
   --success-foreground: #ffffff;
 
+  /* Warning — iOS system orange (dark) */
+  --warning: #ff9f0a;
+  --warning-foreground: #141414;
+
   --destructive: #ff453a;
 
   --hairline: rgba(255, 255, 255, 0.08);
@@ -223,6 +233,9 @@
 
     --success: #34c759;
     --success-foreground: #ffffff;
+
+    --warning: #ff9f0a;
+    --warning-foreground: #141414;
 
     --destructive: #ff453a;
 

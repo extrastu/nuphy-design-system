@@ -17,6 +17,10 @@ import {
   CardContent,
   CardFooter,
 } from '@/components/ds/card'
+import { InlineAlert } from '@/components/ds/inline-alert'
+import { EmptyState } from '@/components/ds/empty-state'
+import { SectionHeader } from '@/components/ds/section-header'
+import { Keyboard } from 'lucide-react'
 
 const colorSwatches: { name: string; token: string; value: string }[] = [
   { name: 'Canvas', token: 'bg-canvas', value: '#EBEBEB' },
@@ -327,6 +331,59 @@ export default function Page() {
               matching your physical keyboard for accurate legends.
             </Collapse>
           </div>
+        </section>
+
+        {/* Section header */}
+        <section className="mb-10">
+          <SectionTitle>Section Header</SectionTitle>
+          <Panel>
+            <div className="py-5">
+              <SectionHeader
+                eyebrow="Firmware"
+                title="Keyboard updates"
+                description="Keep your NuPhy keyboard on the latest firmware for new features and fixes."
+                actions={<Button size="sm">Check now</Button>}
+              />
+            </div>
+          </Panel>
+        </section>
+
+        {/* Inline alerts */}
+        <section className="mb-10">
+          <SectionTitle>Inline Alert</SectionTitle>
+          <div className="flex flex-col gap-3">
+            <InlineAlert variant="info" title="Wired mode active">
+              Report rate is limited to 1000Hz over Bluetooth.
+            </InlineAlert>
+            <InlineAlert variant="success" title="Profile saved">
+              Your gaming layout has been synced to the keyboard.
+            </InlineAlert>
+            <InlineAlert variant="warning" title="Low battery">
+              The keyboard is at 12%. Connect a cable to keep working.
+            </InlineAlert>
+            <InlineAlert variant="error" dismissible title="Update failed">
+              Could not reach the firmware server. Check your connection and
+              try again.
+            </InlineAlert>
+          </div>
+        </section>
+
+        {/* Empty state */}
+        <section className="mb-10">
+          <SectionTitle>Empty State</SectionTitle>
+          <EmptyState
+            icon={<Keyboard />}
+            title="No keyboard connected"
+            description="Plug in your NuPhy keyboard or pair it over Bluetooth to start customizing keys, lighting, and macros."
+            action={
+              <>
+                <Button size="sm">Pair device</Button>
+                <Button size="sm" variant="ghost">
+                  Learn more
+                </Button>
+              </>
+            }
+          />
         </section>
 
         {/* Radius & surfaces */}
