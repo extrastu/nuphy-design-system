@@ -1,9 +1,20 @@
 import * as React from 'react';
 
-declare function SelectPill({ options, defaultValue, label, }: {
-    options: string[];
+type SelectOption = string | {
+    label: string;
+    value: string;
+};
+interface SelectPillProps {
+    options: SelectOption[];
+    /** Controlled selected value. Provide together with `onValueChange`. */
+    value?: string;
+    /** Initial value for uncontrolled usage. */
     defaultValue?: string;
+    onValueChange?: (value: string) => void;
     label?: string;
-}): React.JSX.Element;
+    disabled?: boolean;
+    className?: string;
+}
+declare function SelectPill({ options, value, defaultValue, onValueChange, label, disabled, className, }: SelectPillProps): React.JSX.Element;
 
-export { SelectPill };
+export { type SelectOption, SelectPill, type SelectPillProps };

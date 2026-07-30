@@ -2,24 +2,41 @@
 
 "use client";
 import { jsx } from "react/jsx-runtime";
-import { useState } from "react";
+import * as React from "react";
 import { cn } from "../lib/utils";
 function IosToggle({
+  checked,
   defaultChecked = false,
-  label
+  onCheckedChange,
+  disabled = false,
+  label,
+  id,
+  className
 }) {
-  const [on, setOn] = useState(defaultChecked);
+  const isControlled = checked !== void 0;
+  const [internal, setInternal] = React.useState(defaultChecked);
+  const on = isControlled ? checked : internal;
+  function toggle() {
+    if (disabled) return;
+    const next = !on;
+    if (!isControlled) setInternal(next);
+    onCheckedChange?.(next);
+  }
   return /* @__PURE__ */ jsx(
     "button",
     {
       type: "button",
       role: "switch",
+      id,
       "aria-checked": on,
       "aria-label": label,
-      onClick: () => setOn((v) => !v),
+      disabled,
+      onClick: toggle,
       className: cn(
         "relative inline-flex h-[31px] w-[51px] shrink-0 items-center rounded-full transition-colors duration-200 ease-out outline-none focus-visible:ring-2 focus-visible:ring-ring",
-        on ? "bg-success" : "bg-fill-strong"
+        on ? "bg-success" : "bg-fill-strong",
+        disabled && "cursor-not-allowed opacity-40",
+        className
       ),
       children: /* @__PURE__ */ jsx(
         "span",
