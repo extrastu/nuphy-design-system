@@ -1,6 +1,7 @@
 import { ChevronDown, Minus, Plus } from 'lucide-react'
 import { IosToggle } from '@/components/ds/ios-toggle'
 import { SettingRow } from '@/components/ds/setting-row'
+import { ThemeToggle } from '@/components/ds/theme-toggle'
 
 const colorSwatches: { name: string; token: string; value: string }[] = [
   { name: 'Canvas', token: 'bg-canvas', value: '#EBEBEB' },
@@ -50,21 +51,25 @@ function DropdownPill({ children }: { children: React.ReactNode }) {
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-canvas">
+    <main className="min-h-screen bg-canvas bg-dotted">
       <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-16">
         {/* Header */}
-        <header className="mb-10">
-          <p className="text-[13px] font-semibold uppercase tracking-wide text-muted-foreground">
-            Design System
-          </p>
-          <h1 className="mt-1 text-[28px] font-bold leading-tight tracking-tight text-foreground text-balance">
-            NuPhy IO
-          </h1>
-          <p className="mt-2 max-w-xl text-[15px] leading-6 text-muted-foreground text-pretty">
-            An Apple / macOS&ndash;inspired settings aesthetic: a light gray
-            canvas, flat white cards, soft rounded corners, a near&ndash;black
-            text scale, and an iOS system&ndash;green accent.
-          </p>
+        <header className="mb-10 flex items-start justify-between gap-4">
+          <div>
+            <p className="text-[13px] font-semibold uppercase tracking-wide text-muted-foreground">
+              Design System
+            </p>
+            <h1 className="mt-1 text-[28px] font-bold leading-tight tracking-tight text-foreground text-balance">
+              NuPhy IO
+            </h1>
+            <p className="mt-2 max-w-xl text-[15px] leading-6 text-muted-foreground text-pretty">
+              An Apple / macOS&ndash;inspired settings aesthetic with light and
+              dark modes: neutral canvas, flat cards, soft rounded corners, a
+              near&ndash;monochrome text scale, and an iOS system&ndash;green
+              accent.
+            </p>
+          </div>
+          <ThemeToggle />
         </header>
 
         {/* Colors */}
