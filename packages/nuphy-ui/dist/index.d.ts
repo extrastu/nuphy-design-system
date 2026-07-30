@@ -1,8 +1,12 @@
-export { IosToggle } from './components/ios-toggle.js';
-export { SelectPill } from './components/select-pill.js';
+export { IosToggle, IosToggleProps } from './components/ios-toggle.js';
+export { SelectOption, SelectPill, SelectPillProps } from './components/select-pill.js';
 export { SettingRow } from './components/setting-row.js';
 export { Stepper } from './components/stepper.js';
 export { ThemeToggle } from './components/theme-toggle.js';
+export { IconButton, IconButtonProps } from './components/icon-button.js';
+export { NavItem, NavItemData, NavItemProps, SettingsNav, SettingsNavProps } from './components/settings-nav.js';
+export { SiteCard, SiteCardProps } from './components/site-card.js';
+export { SearchField, SearchFieldProps } from './components/search-field.js';
 export { Button, ButtonProps } from './components/button.js';
 export { Input, InputProps } from './components/input.js';
 export { Textarea, TextareaProps } from './components/textarea.js';

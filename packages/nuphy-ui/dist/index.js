@@ -1,8 +1,17 @@
 import { IosToggle } from "./components/ios-toggle";
-import { SelectPill } from "./components/select-pill";
+import {
+  SelectPill
+} from "./components/select-pill";
 import { SettingRow } from "./components/setting-row";
 import { Stepper } from "./components/stepper";
 import { ThemeToggle } from "./components/theme-toggle";
+import { IconButton } from "./components/icon-button";
+import {
+  SettingsNav,
+  NavItem
+} from "./components/settings-nav";
+import { SiteCard } from "./components/site-card";
+import { SearchField } from "./components/search-field";
 import { Button } from "./components/button";
 import { Input } from "./components/input";
 import { Textarea } from "./components/textarea";
@@ -30,11 +39,16 @@ export {
   CardHeader,
   CardTitle,
   Collapse,
+  IconButton,
   Input,
   IosToggle,
+  NavItem,
+  SearchField,
   Segmented,
   SelectPill,
   SettingRow,
+  SettingsNav,
+  SiteCard,
   Stepper,
   Textarea,
   ThemeToggle,
