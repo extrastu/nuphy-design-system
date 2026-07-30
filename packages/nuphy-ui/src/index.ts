@@ -38,6 +38,16 @@ export {
   type SegmentedProps,
   type SegmentedOption,
 } from './components/segmented'
+export {
+  InlineAlert,
+  type InlineAlertProps,
+  type InlineAlertVariant,
+} from './components/inline-alert'
+export { EmptyState, type EmptyStateProps } from './components/empty-state'
+export {
+  SectionHeader,
+  type SectionHeaderProps,
+} from './components/section-header'
 
 // Utilities
 export { cn } from './lib/utils'

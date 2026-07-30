@@ -14,6 +14,9 @@ export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 export { Badge, BadgeProps } from './components/badge.js';
 export { Collapse, CollapseProps } from './components/collapse.js';
 export { Segmented, SegmentedOption, SegmentedProps } from './components/segmented.js';
+export { InlineAlert, InlineAlertProps, InlineAlertVariant } from './components/inline-alert.js';
+export { EmptyState, EmptyStateProps } from './components/empty-state.js';
+export { SectionHeader, SectionHeaderProps } from './components/section-header.js';
 export { cn } from './lib/utils.js';
 import 'react';
 import 'clsx';

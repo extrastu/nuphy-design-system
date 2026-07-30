@@ -28,6 +28,13 @@ import { Collapse } from "./components/collapse";
 import {
   Segmented
 } from "./components/segmented";
+import {
+  InlineAlert
+} from "./components/inline-alert";
+import { EmptyState } from "./components/empty-state";
+import {
+  SectionHeader
+} from "./components/section-header";
 import { cn } from "./lib/utils";
 export {
   Badge,
@@ -39,11 +46,14 @@ export {
   CardHeader,
   CardTitle,
   Collapse,
+  EmptyState,
   IconButton,
+  InlineAlert,
   Input,
   IosToggle,
   NavItem,
   SearchField,
+  SectionHeader,
   Segmented,
   SelectPill,
   SettingRow,
