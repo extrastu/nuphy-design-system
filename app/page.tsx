@@ -3,6 +3,20 @@ import { SettingRow } from '@/components/ds/setting-row'
 import { ThemeToggle } from '@/components/ds/theme-toggle'
 import { Stepper } from '@/components/ds/stepper'
 import { SelectPill } from '@/components/ds/select-pill'
+import { Button } from '@/components/ds/button'
+import { Input } from '@/components/ds/input'
+import { Textarea } from '@/components/ds/textarea'
+import { Badge } from '@/components/ds/badge'
+import { Collapse } from '@/components/ds/collapse'
+import { Segmented } from '@/components/ds/segmented'
+import {
+  Card as DsCard,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from '@/components/ds/card'
 
 const colorSwatches: { name: string; token: string; value: string }[] = [
   { name: 'Canvas', token: 'bg-canvas', value: '#EBEBEB' },
@@ -33,7 +47,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
   )
 }
 
-function Card({ children }: { children: React.ReactNode }) {
+function Panel({ children }: { children: React.ReactNode }) {
   return (
     <div className="rounded-2xl border border-hairline bg-surface px-5 py-1">
       {children}
@@ -90,7 +104,7 @@ export default function Page() {
         {/* Typography */}
         <section className="mb-10">
           <SectionTitle>Typography</SectionTitle>
-          <Card>
+          <Panel>
             <ul className="divide-y divide-hairline">
               {typeScale.map((t) => (
                 <li
@@ -104,7 +118,7 @@ export default function Page() {
                 </li>
               ))}
             </ul>
-          </Card>
+          </Panel>
           <p className="mt-2 px-1 text-[12px] text-muted-foreground">
             System stack: -apple-system, BlinkMacSystemFont, &ldquo;Segoe
             UI&rdquo;, Roboto&hellip;
@@ -114,7 +128,7 @@ export default function Page() {
         {/* Controls — settings list, the signature pattern */}
         <section className="mb-10">
           <SectionTitle>Controls</SectionTitle>
-          <Card>
+          <Panel>
             <div className="divide-y divide-hairline">
               <SettingRow
                 title="Auto Sleep"
@@ -157,40 +171,162 @@ export default function Page() {
                 }
               />
             </div>
-          </Card>
+          </Panel>
         </section>
 
         {/* Buttons */}
         <section className="mb-10">
           <SectionTitle>Buttons</SectionTitle>
-          <Card>
-            <div className="flex flex-wrap items-center gap-3 py-5">
-              <button
-                type="button"
-                className="rounded-full bg-primary px-5 py-2.5 text-[14px] font-medium text-primary-foreground transition-opacity hover:opacity-90"
-              >
-                Download Now
-              </button>
-              <button
-                type="button"
-                className="rounded-full bg-fill px-5 py-2.5 text-[14px] font-medium text-foreground transition-colors hover:bg-fill-strong"
-              >
-                Reset Keyboard
-              </button>
-              <button
-                type="button"
-                className="rounded-full bg-success px-5 py-2.5 text-[14px] font-medium text-success-foreground transition-opacity hover:opacity-90"
-              >
-                Connected
-              </button>
-              <button
-                type="button"
-                className="rounded-full border border-border px-5 py-2.5 text-[14px] font-medium text-foreground transition-colors hover:bg-fill"
-              >
-                Learn more
-              </button>
+          <Panel>
+            <div className="flex flex-col gap-4 py-5">
+              <div className="flex flex-wrap items-center gap-3">
+                <Button>Download Now</Button>
+                <Button variant="secondary">Reset Keyboard</Button>
+                <Button variant="ghost">Learn more</Button>
+                <Button variant="destructive">Delete Profile</Button>
+                <Button disabled>Disabled</Button>
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <Button size="sm">Small</Button>
+                <Button size="md">Medium</Button>
+                <Button size="lg">Large</Button>
+              </div>
             </div>
-          </Card>
+          </Panel>
+        </section>
+
+        {/* Inputs */}
+        <section className="mb-10">
+          <SectionTitle>Inputs</SectionTitle>
+          <Panel>
+            <div className="flex flex-col gap-4 py-5">
+              <div className="flex flex-col gap-1.5">
+                <label
+                  htmlFor="ds-name"
+                  className="text-[13px] font-medium text-foreground"
+                >
+                  Profile name
+                </label>
+                <Input id="ds-name" placeholder="e.g. Gaming Layout" />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label
+                  htmlFor="ds-notes"
+                  className="text-[13px] font-medium text-foreground"
+                >
+                  Notes
+                </label>
+                <Textarea
+                  id="ds-notes"
+                  placeholder="Describe what this profile is for..."
+                />
+              </div>
+              <Input placeholder="Disabled input" disabled />
+            </div>
+          </Panel>
+        </section>
+
+        {/* Cards */}
+        <section className="mb-10">
+          <SectionTitle>Card</SectionTitle>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <DsCard>
+              <CardHeader>
+                <div className="flex items-center justify-between gap-2">
+                  <CardTitle>IO Windows</CardTitle>
+                  <Badge>v2.2.6</Badge>
+                </div>
+                <CardDescription>
+                  NuPhyIO desktop client for Windows. Released 2026-06-15.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-[13px] leading-5 text-muted-foreground">
+                  Configure lighting, remap keys, and manage firmware from a
+                  single app.
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Button size="sm">Download</Button>
+                <Button size="sm" variant="ghost">
+                  Release notes
+                </Button>
+              </CardFooter>
+            </DsCard>
+
+            <DsCard>
+              <CardHeader>
+                <div className="flex items-center justify-between gap-2">
+                  <CardTitle>IO macOS</CardTitle>
+                  <Badge variant="success">Connected</Badge>
+                </div>
+                <CardDescription>
+                  NuPhyIO desktop client for macOS. Released 2026-06-15.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-[13px] leading-5 text-muted-foreground">
+                  Universal binary with full Apple Silicon support and menu-bar
+                  quick controls.
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Button size="sm">Download</Button>
+                <Badge variant="outline">Universal</Badge>
+              </CardFooter>
+            </DsCard>
+          </div>
+        </section>
+
+        {/* Segmented control */}
+        <section className="mb-10">
+          <SectionTitle>Segmented Control</SectionTitle>
+          <Panel>
+            <div className="flex flex-wrap items-center gap-4 py-5">
+              <Segmented
+                aria-label="Theme"
+                defaultValue="light"
+                options={[
+                  { label: 'Light', value: 'light' },
+                  { label: 'Dark', value: 'dark' },
+                  { label: 'Auto', value: 'auto' },
+                ]}
+              />
+              <Segmented
+                aria-label="Connection"
+                defaultValue="wired"
+                options={[
+                  { label: 'Wired', value: 'wired' },
+                  { label: '2.4G', value: '24g' },
+                  { label: 'Bluetooth', value: 'bt' },
+                ]}
+              />
+            </div>
+          </Panel>
+        </section>
+
+        {/* Collapse */}
+        <section className="mb-10">
+          <SectionTitle>Collapse</SectionTitle>
+          <div className="flex flex-col gap-3">
+            <Collapse
+              title="What is the polling rate?"
+              description="Learn how report rate affects latency."
+              defaultOpen
+            >
+              Polling rate is how often the keyboard reports key states to your
+              computer. A higher rate (e.g. 8000Hz) means lower latency but
+              higher power and CPU usage.
+            </Collapse>
+            <Collapse title="How do I reset the keyboard?">
+              Hold Fn + Esc for 5 seconds until the lights flash. This restores
+              factory settings and removes all user configurations.
+            </Collapse>
+            <Collapse title="Which layouts are supported?">
+              US-ANSI (Mac &amp; Win), US-ISO, UK-ISO, and JIS. Select the one
+              matching your physical keyboard for accurate legends.
+            </Collapse>
+          </div>
         </section>
 
         {/* Radius & surfaces */}

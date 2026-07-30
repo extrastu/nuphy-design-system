@@ -1,4 +1,4 @@
-import * as react from 'react';
+import * as React from 'react';
 
 declare function Stepper({ defaultValue, min, max, step, unit, label, }: {
     defaultValue?: number;
@@ -7,6 +7,6 @@ declare function Stepper({ defaultValue, min, max, step, unit, label, }: {
     step?: number;
     unit?: string;
     label?: string;
-}): react.JSX.Element;
+}): React.JSX.Element;
 
 export { Stepper };

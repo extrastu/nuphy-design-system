@@ -1,5 +1,5 @@
-import * as react from 'react';
+import * as React from 'react';
 
-declare function ThemeToggle(): react.JSX.Element;
+declare function ThemeToggle(): React.JSX.Element;
 
 export { ThemeToggle };

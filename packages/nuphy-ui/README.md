@@ -60,6 +60,8 @@ Toggle by adding the `dark` class to `<html>` (the included `ThemeToggle` does t
 
 ## Components
 
+Settings-list controls:
+
 | Component     | Description                                        |
 | ------------- | -------------------------------------------------- |
 | `SettingRow`  | Title + description + right-aligned control row    |
@@ -67,6 +69,17 @@ Toggle by adding the `dark` class to `<html>` (the included `ThemeToggle` does t
 | `Stepper`     | Minus/plus numeric stepper with min/max + unit     |
 | `SelectPill`  | Accessible pill dropdown (click-outside + Esc)     |
 | `ThemeToggle` | Light/dark switcher that toggles the `dark` class  |
+
+General components:
+
+| Component                                                          | Description                                         |
+| ------------------------------------------------------------------ | --------------------------------------------------- |
+| `Button`                                                           | Pill button — `primary` / `secondary` / `ghost` / `destructive`, sizes `sm` / `md` / `lg` |
+| `Input` / `Textarea`                                               | Rounded fill inputs with focus ring                 |
+| `Card` (`CardHeader`/`CardTitle`/`CardDescription`/`CardContent`/`CardFooter`) | Flat surface card with optional footer   |
+| `Badge`                                                            | Status chip — `neutral` / `success` / `outline`     |
+| `Collapse`                                                         | Animated accordion panel (controlled/uncontrolled)  |
+| `Segmented`                                                        | iOS segmented control / radio group                 |
 
 ## Publishing (maintainers)
 

@@ -1,9 +1,9 @@
-import * as react from 'react';
+import * as React from 'react';
 
 declare function SelectPill({ options, defaultValue, label, }: {
     options: string[];
     defaultValue?: string;
     label?: string;
-}): react.JSX.Element;
+}): React.JSX.Element;
 
 export { SelectPill };
