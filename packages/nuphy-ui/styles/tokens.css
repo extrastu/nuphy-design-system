@@ -1,0 +1,179 @@
+/*
+  ============================================================
+  @extrastu/nuphy-ui — Design Tokens
+  Import once in your app's global stylesheet (after `@import "tailwindcss";`):
+
+      @import "@extrastu/nuphy-ui/styles/tokens.css";
+
+  Requires Tailwind CSS v4. Provides the color/radius tokens and the
+  `.bg-dotted` utility that the NuPhy UI components depend on.
+  ============================================================
+*/
+
+@theme inline {
+  /* Fonts */
+  --font-sans: var(--font-app-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  /* Color token bridges (shadcn-compatible) */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* NuPhy semantic extras */
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fill: var(--fill);
+  --color-fill-strong: var(--fill-strong);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-hairline: var(--hairline);
+
+  /* Radius scale — soft, macOS-like rounding */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+/* ---------------- Light (default) ---------------- */
+:root {
+  color-scheme: light;
+
+  --canvas: #ebebeb;
+  --background: #ebebeb;
+  --surface: #ffffff;
+  --surface-2: #f9f9f9;
+  --card: #ffffff;
+  --popover: #ffffff;
+
+  --foreground: rgba(29, 29, 31, 0.86);
+  --card-foreground: rgba(29, 29, 31, 0.86);
+  --popover-foreground: rgba(29, 29, 31, 0.86);
+  --muted: rgba(29, 29, 31, 0.04);
+  --muted-foreground: rgba(29, 29, 31, 0.5);
+
+  --fill: rgba(29, 29, 31, 0.04);
+  --fill-strong: rgba(29, 29, 31, 0.08);
+  --accent: rgba(29, 29, 31, 0.04);
+  --accent-foreground: rgba(29, 29, 31, 0.86);
+  --secondary: #f9f9f9;
+  --secondary-foreground: rgba(29, 29, 31, 0.86);
+
+  --primary: rgba(29, 29, 31, 0.9);
+  --primary-foreground: #ffffff;
+
+  --success: #34c759;
+  --success-foreground: #ffffff;
+
+  --destructive: #ff3b30;
+
+  --hairline: rgba(29, 29, 31, 0.08);
+  --border: rgba(29, 29, 31, 0.1);
+  --input: rgba(29, 29, 31, 0.12);
+  --ring: rgba(29, 29, 31, 0.2);
+
+  --radius: 0.9rem;
+}
+
+/* ---------------- Dark ---------------- */
+.dark {
+  color-scheme: dark;
+
+  --canvas: #141414;
+  --background: #141414;
+  --surface: #1e1e1e;
+  --surface-2: #262626;
+  --card: #1e1e1e;
+  --popover: #262626;
+
+  --foreground: rgba(255, 255, 255, 0.92);
+  --card-foreground: rgba(255, 255, 255, 0.92);
+  --popover-foreground: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.05);
+  --muted-foreground: rgba(255, 255, 255, 0.45);
+
+  --fill: rgba(255, 255, 255, 0.06);
+  --fill-strong: rgba(255, 255, 255, 0.1);
+  --accent: rgba(255, 255, 255, 0.06);
+  --accent-foreground: rgba(255, 255, 255, 0.92);
+  --secondary: #262626;
+  --secondary-foreground: rgba(255, 255, 255, 0.92);
+
+  --primary: rgba(255, 255, 255, 0.92);
+  --primary-foreground: #141414;
+
+  --success: #34c759;
+  --success-foreground: #ffffff;
+
+  --destructive: #ff453a;
+
+  --hairline: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.14);
+  --ring: rgba(255, 255, 255, 0.26);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+
+    --canvas: #141414;
+    --background: #141414;
+    --surface: #1e1e1e;
+    --surface-2: #262626;
+    --card: #1e1e1e;
+    --popover: #262626;
+
+    --foreground: rgba(255, 255, 255, 0.92);
+    --card-foreground: rgba(255, 255, 255, 0.92);
+    --popover-foreground: rgba(255, 255, 255, 0.92);
+    --muted: rgba(255, 255, 255, 0.05);
+    --muted-foreground: rgba(255, 255, 255, 0.45);
+
+    --fill: rgba(255, 255, 255, 0.06);
+    --fill-strong: rgba(255, 255, 255, 0.1);
+    --accent: rgba(255, 255, 255, 0.06);
+    --accent-foreground: rgba(255, 255, 255, 0.92);
+    --secondary: #262626;
+    --secondary-foreground: rgba(255, 255, 255, 0.92);
+
+    --primary: rgba(255, 255, 255, 0.92);
+    --primary-foreground: #141414;
+
+    --success: #34c759;
+    --success-foreground: #ffffff;
+
+    --destructive: #ff453a;
+
+    --hairline: rgba(255, 255, 255, 0.08);
+    --border: rgba(255, 255, 255, 0.1);
+    --input: rgba(255, 255, 255, 0.14);
+    --ring: rgba(255, 255, 255, 0.26);
+  }
+}
+
+@layer utilities {
+  .bg-dotted {
+    background-image: radial-gradient(var(--hairline) 1px, transparent 1px);
+    background-size: 22px 22px;
+    background-position: -1px -1px;
+  }
+}
