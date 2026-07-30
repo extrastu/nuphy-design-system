@@ -1,7 +1,8 @@
-import { ChevronDown, Minus, Plus } from 'lucide-react'
 import { IosToggle } from '@/components/ds/ios-toggle'
 import { SettingRow } from '@/components/ds/setting-row'
 import { ThemeToggle } from '@/components/ds/theme-toggle'
+import { Stepper } from '@/components/ds/stepper'
+import { SelectPill } from '@/components/ds/select-pill'
 
 const colorSwatches: { name: string; token: string; value: string }[] = [
   { name: 'Canvas', token: 'bg-canvas', value: '#EBEBEB' },
@@ -37,15 +38,6 @@ function Card({ children }: { children: React.ReactNode }) {
     <div className="rounded-2xl border border-hairline bg-surface px-5 py-1">
       {children}
     </div>
-  )
-}
-
-function DropdownPill({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex items-center gap-1.5 rounded-full bg-fill px-3 py-1.5 text-[13px] font-medium text-foreground">
-      {children}
-      <ChevronDown className="size-3.5 text-muted-foreground" />
-    </span>
   )
 }
 
@@ -133,25 +125,13 @@ export default function Page() {
                 title="Level 1 Sleep"
                 description="Adjust the idle time before the keyboard enters Level 1 sleep to extend usage time."
                 control={
-                  <span className="inline-flex items-center gap-2 rounded-full bg-fill px-1.5 py-1">
-                    <button
-                      type="button"
-                      aria-label="Decrease"
-                      className="flex size-6 items-center justify-center rounded-full text-foreground transition-colors hover:bg-fill-strong"
-                    >
-                      <Minus className="size-3.5" />
-                    </button>
-                    <span className="min-w-5 text-center text-[14px] font-medium tabular-nums">
-                      6
-                    </span>
-                    <button
-                      type="button"
-                      aria-label="Increase"
-                      className="flex size-6 items-center justify-center rounded-full text-foreground transition-colors hover:bg-fill-strong"
-                    >
-                      <Plus className="size-3.5" />
-                    </button>
-                  </span>
+                  <Stepper
+                    defaultValue={6}
+                    min={1}
+                    max={60}
+                    unit="min"
+                    label="Level 1 Sleep"
+                  />
                 }
               />
               <SettingRow
@@ -162,7 +142,19 @@ export default function Page() {
               <SettingRow
                 title="Keyboard Layout"
                 description="Choose the language displayed on the virtual keyboard."
-                control={<DropdownPill>US-ANSI-Mac</DropdownPill>}
+                control={
+                  <SelectPill
+                    label="Keyboard Layout"
+                    defaultValue="US-ANSI-Mac"
+                    options={[
+                      'US-ANSI-Mac',
+                      'US-ANSI-Win',
+                      'US-ISO',
+                      'UK-ISO',
+                      'JIS',
+                    ]}
+                  />
+                }
               />
             </div>
           </Card>
