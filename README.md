@@ -1,33 +1,88 @@
 # nuphy-design-system
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+NuPhy IO 设计系统 —— Apple / macOS 风格的 Settings UI，含亮暗色 tokens。
 
-## Built with v0
+**演示站点：** [https://nuphy-design-system.vercel.app/](https://nuphy-design-system.vercel.app/)
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+本仓库包含：
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_DvhRPdc5xiexOIUgAt6c0SJBO7Mb)
+| 路径 | 说明 |
+| --- | --- |
+| `app/` · `components/ds/` | Next.js 组件展示站（本地预览） |
+| [`packages/nuphy-ui`](./packages/nuphy-ui) | 可发布的 React 组件库 `@extrastu/nuphy-ui` |
 
-## Getting Started
-
-First, run the development server:
+## 安装
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+npm i @extrastu/nuphy-ui
+# 或
+pnpm add @extrastu/nuphy-ui
+# 或
+yarn add @extrastu/nuphy-ui
+```
+
+Peer 依赖（若项目中尚未安装）：
+
+```bash
+npm i react react-dom lucide-react
+```
+
+## 快速开始（展示站）
+
+```bash
+pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 [http://localhost:3000](http://localhost:3000) 查看组件与 tokens。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 使用组件库
 
-## Learn More
 
-To learn more, take a look at the following resources:
+需要 **Tailwind CSS v4**。在全局 CSS 中：
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+```css
+@import "tailwindcss";
+@import "@extrastu/nuphy-ui/styles/tokens.css";
+@source "../node_modules/@extrastu/nuphy-ui/dist";
+```
+
+```tsx
+import { SettingRow, IosToggle, Stepper, ThemeToggle } from '@extrastu/nuphy-ui'
+
+export function Settings() {
+  return (
+    <div className="rounded-2xl bg-surface p-2">
+      <SettingRow
+        title="Auto Sleep"
+        control={<IosToggle defaultChecked label="Auto Sleep" />}
+      />
+      <SettingRow
+        title="Level 1 Sleep"
+        control={<Stepper defaultValue={6} min={1} max={60} unit="min" />}
+      />
+      <ThemeToggle />
+    </div>
+  )
+}
+```
+
+完整安装、组件列表与发布说明见 [`packages/nuphy-ui/README.md`](./packages/nuphy-ui/README.md)。
+
+## 组件一览
+
+**Settings 控件：** `SettingRow` · `IosToggle` · `Stepper` · `SelectPill` · `ThemeToggle` · `IconButton` · `SettingsNav` · `SiteCard` · `SearchField`
+
+**通用：** `Button` · `Input` · `Textarea` · `Card` · `Badge` · `Collapse` · `Segmented` · `InlineAlert` · `EmptyState` · `SectionHeader`
+
+## 本地开发组件包
+
+```bash
+cd packages/nuphy-ui
+pnpm install
+pnpm build   # 或 pnpm dev 监听构建
+```
+
+## License
+
+MIT
