@@ -2,6 +2,9 @@
 
 NuPhy IO design system — an Apple / macOS–inspired settings UI kit for React + Tailwind CSS v4, with built-in light & dark tokens.
 
+**Demo:** [https://nuphy-design-system.vercel.app/](https://nuphy-design-system.vercel.app/)  
+**Repo:** [https://github.com/extrastu/nuphy-design-system](https://github.com/extrastu/nuphy-design-system)
+
 ## Install
 
 ```bash
@@ -30,27 +33,24 @@ Requires **Tailwind CSS v4** in the consuming app.
 3. Use the components:
 
 ```tsx
-import { SettingRow, IosToggle, Stepper, SelectPill, ThemeToggle } from '@extrastu/nuphy-ui'
+import { SettingRow, IosToggle, Stepper, SelectPill, ThemeToggle } from "@extrastu/nuphy-ui";
 
 export function Settings() {
   return (
-    <div className="rounded-2xl bg-surface p-2">
+    <div className='rounded-2xl bg-surface p-2'>
       <SettingRow
-        title="Auto Sleep"
-        description="Turn off backlight after idle."
-        control={<IosToggle defaultChecked label="Auto Sleep" />}
+        title='Auto Sleep'
+        description='Turn off backlight after idle.'
+        control={<IosToggle defaultChecked label='Auto Sleep' />}
       />
+      <SettingRow title='Level 1 Sleep' control={<Stepper defaultValue={6} min={1} max={60} unit='min' />} />
       <SettingRow
-        title="Level 1 Sleep"
-        control={<Stepper defaultValue={6} min={1} max={60} unit="min" />}
-      />
-      <SettingRow
-        title="Keyboard Layout"
-        control={<SelectPill defaultValue="US-ANSI-Mac" options={['US-ANSI-Mac', 'JIS']} />}
+        title='Keyboard Layout'
+        control={<SelectPill defaultValue='US-ANSI-Mac' options={["US-ANSI-Mac", "JIS"]} />}
       />
       <ThemeToggle />
     </div>
-  )
+  );
 }
 ```
 
@@ -62,24 +62,24 @@ Toggle by adding the `dark` class to `<html>` (the included `ThemeToggle` does t
 
 Settings-list controls:
 
-| Component     | Description                                        |
-| ------------- | -------------------------------------------------- |
-| `SettingRow`  | Title + description + right-aligned control row    |
-| `IosToggle`   | iOS-style switch with green active state           |
-| `Stepper`     | Minus/plus numeric stepper with min/max + unit     |
-| `SelectPill`  | Accessible pill dropdown (click-outside + Esc)     |
-| `ThemeToggle` | Light/dark switcher that toggles the `dark` class  |
+| Component     | Description                                       |
+| ------------- | ------------------------------------------------- |
+| `SettingRow`  | Title + description + right-aligned control row   |
+| `IosToggle`   | iOS-style switch with green active state          |
+| `Stepper`     | Minus/plus numeric stepper with min/max + unit    |
+| `SelectPill`  | Accessible pill dropdown (click-outside + Esc)    |
+| `ThemeToggle` | Light/dark switcher that toggles the `dark` class |
 
 General components:
 
-| Component                                                          | Description                                         |
-| ------------------------------------------------------------------ | --------------------------------------------------- |
-| `Button`                                                           | Pill button — `primary` / `secondary` / `ghost` / `destructive`, sizes `sm` / `md` / `lg` |
-| `Input` / `Textarea`                                               | Rounded fill inputs with focus ring                 |
-| `Card` (`CardHeader`/`CardTitle`/`CardDescription`/`CardContent`/`CardFooter`) | Flat surface card with optional footer   |
-| `Badge`                                                            | Status chip — `neutral` / `success` / `outline`     |
-| `Collapse`                                                         | Animated accordion panel (controlled/uncontrolled)  |
-| `Segmented`                                                        | iOS segmented control / radio group                 |
+| Component                                                                      | Description                                                                               |
+| ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| `Button`                                                                       | Pill button — `primary` / `secondary` / `ghost` / `destructive`, sizes `sm` / `md` / `lg` |
+| `Input` / `Textarea`                                                           | Rounded fill inputs with focus ring                                                       |
+| `Card` (`CardHeader`/`CardTitle`/`CardDescription`/`CardContent`/`CardFooter`) | Flat surface card with optional footer                                                    |
+| `Badge`                                                                        | Status chip — `neutral` / `success` / `outline`                                           |
+| `Collapse`                                                                     | Animated accordion panel (controlled/uncontrolled)                                        |
+| `Segmented`                                                                    | iOS segmented control / radio group                                                       |
 
 ## Publishing (maintainers)
 
@@ -90,8 +90,6 @@ npm publish --access public
 ```
 
 The `prepublishOnly` script runs the build automatically.
-```
-```
 
 ## License
 
