@@ -7,6 +7,9 @@ export { IconButton, IconButtonProps } from './components/icon-button.js';
 export { NavItem, NavItemData, NavItemProps, SettingsNav, SettingsNavProps } from './components/settings-nav.js';
 export { SiteCard, SiteCardProps } from './components/site-card.js';
 export { SearchField, SearchFieldProps } from './components/search-field.js';
+export { SettingsGroup, SettingsGroupProps } from './components/settings-group.js';
+export { Slider, SliderProps } from './components/slider.js';
+export { Checkbox, CheckboxProps } from './components/checkbox.js';
 export { Button, ButtonProps } from './components/button.js';
 export { Input, InputProps } from './components/input.js';
 export { Textarea, TextareaProps } from './components/textarea.js';
@@ -17,6 +20,8 @@ export { Segmented, SegmentedOption, SegmentedProps } from './components/segment
 export { InlineAlert, InlineAlertProps, InlineAlertVariant } from './components/inline-alert.js';
 export { EmptyState, EmptyStateProps } from './components/empty-state.js';
 export { SectionHeader, SectionHeaderProps } from './components/section-header.js';
+export { Divider, DividerProps } from './components/divider.js';
+export { Field, FieldProps } from './components/field.js';
 export { cn } from './lib/utils.js';
 import 'react';
 import 'clsx';

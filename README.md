@@ -1,5 +1,7 @@
 # nuphy-design-system
 
+**中文** · [English](./README.en.md)
+
 NuPhy IO 设计系统 —— Apple / macOS 风格的 Settings UI，含亮暗色 tokens。
 
 **演示站点：** [https://nuphy-design-system.vercel.app/](https://nuphy-design-system.vercel.app/)
@@ -71,9 +73,9 @@ export function Settings() {
 
 ## 组件一览
 
-**Settings 控件：** `SettingRow` · `IosToggle` · `Stepper` · `SelectPill` · `ThemeToggle` · `IconButton` · `SettingsNav` · `SiteCard` · `SearchField`
+**Settings 控件：** `SettingsGroup` · `SettingRow` · `IosToggle` · `Stepper` · `Slider` · `Checkbox` · `SelectPill` · `ThemeToggle` · `IconButton` · `SettingsNav` · `SiteCard` · `SearchField`
 
-**通用：** `Button` · `Input` · `Textarea` · `Card` · `Badge` · `Collapse` · `Segmented` · `InlineAlert` · `EmptyState` · `SectionHeader`
+**通用：** `Button` · `Input` · `Textarea` · `Field` · `Divider` · `Card` · `Badge` · `Collapse` · `Segmented` · `InlineAlert` · `EmptyState` · `SectionHeader`
 
 ## 本地开发组件包
 

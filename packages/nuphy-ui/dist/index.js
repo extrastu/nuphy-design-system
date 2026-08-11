@@ -12,6 +12,11 @@ import {
 } from "./components/settings-nav";
 import { SiteCard } from "./components/site-card";
 import { SearchField } from "./components/search-field";
+import {
+  SettingsGroup
+} from "./components/settings-group";
+import { Slider } from "./components/slider";
+import { Checkbox } from "./components/checkbox";
 import { Button } from "./components/button";
 import { Input } from "./components/input";
 import { Textarea } from "./components/textarea";
@@ -35,6 +40,8 @@ import { EmptyState } from "./components/empty-state";
 import {
   SectionHeader
 } from "./components/section-header";
+import { Divider } from "./components/divider";
+import { Field } from "./components/field";
 import { cn } from "./lib/utils";
 export {
   Badge,
@@ -45,8 +52,11 @@ export {
   CardFooter,
   CardHeader,
   CardTitle,
+  Checkbox,
   Collapse,
+  Divider,
   EmptyState,
+  Field,
   IconButton,
   InlineAlert,
   Input,
@@ -57,8 +67,10 @@ export {
   Segmented,
   SelectPill,
   SettingRow,
+  SettingsGroup,
   SettingsNav,
   SiteCard,
+  Slider,
   Stepper,
   Textarea,
   ThemeToggle,

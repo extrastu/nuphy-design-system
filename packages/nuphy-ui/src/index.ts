@@ -18,6 +18,12 @@ export {
 } from './components/settings-nav'
 export { SiteCard, type SiteCardProps } from './components/site-card'
 export { SearchField, type SearchFieldProps } from './components/search-field'
+export {
+  SettingsGroup,
+  type SettingsGroupProps,
+} from './components/settings-group'
+export { Slider, type SliderProps } from './components/slider'
+export { Checkbox, type CheckboxProps } from './components/checkbox'
 
 // General components
 export { Button, type ButtonProps } from './components/button'
@@ -48,6 +54,8 @@ export {
   SectionHeader,
   type SectionHeaderProps,
 } from './components/section-header'
+export { Divider, type DividerProps } from './components/divider'
+export { Field, type FieldProps } from './components/field'
 
 // Utilities
 export { cn } from './lib/utils'

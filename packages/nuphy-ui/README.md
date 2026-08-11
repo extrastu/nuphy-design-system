@@ -64,13 +64,16 @@ Toggle by adding the `dark` class to `<html>` (the included `ThemeToggle` does t
 
 Settings-list controls:
 
-| Component     | Description                                       |
-| ------------- | ------------------------------------------------- |
-| `SettingRow`  | Title + description + right-aligned control row   |
-| `IosToggle`   | iOS-style switch with green active state          |
-| `Stepper`     | Minus/plus numeric stepper with min/max + unit    |
-| `SelectPill`  | Accessible pill dropdown (click-outside + Esc)    |
-| `ThemeToggle` | Light/dark switcher that toggles the `dark` class |
+| Component        | Description                                              |
+| ---------------- | -------------------------------------------------------- |
+| `SettingsGroup`  | Rounded card group with hairline dividers + optional title/footer |
+| `SettingRow`     | Title + description + right-aligned control row         |
+| `IosToggle`      | iOS-style switch with green active state                 |
+| `Stepper`        | Minus/plus numeric stepper with min/max + unit           |
+| `Slider`         | Fine track + thumb; optional value/unit display          |
+| `Checkbox`       | macOS-style checkbox with optional label                 |
+| `SelectPill`     | Accessible pill dropdown (click-outside + Esc)           |
+| `ThemeToggle`    | Light/dark switcher that toggles the `dark` class        |
 
 General components:
 
@@ -78,6 +81,8 @@ General components:
 | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
 | `Button`                                                                       | Pill button — `primary` / `secondary` / `ghost` / `destructive`, sizes `sm` / `md` / `lg` |
 | `Input` / `Textarea`                                                           | Rounded fill inputs with focus ring                                                       |
+| `Field`                                                                        | Label + hint/error wrapper for form controls                                              |
+| `Divider`                                                                      | Horizontal / vertical hairline separator                                                  |
 | `Card` (`CardHeader`/`CardTitle`/`CardDescription`/`CardContent`/`CardFooter`) | Flat surface card with optional footer                                                    |
 | `Badge`                                                                        | Status chip — `neutral` / `success` / `outline`                                           |
 | `Collapse`                                                                     | Animated accordion panel (controlled/uncontrolled)                                        |
