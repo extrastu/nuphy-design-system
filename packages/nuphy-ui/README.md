@@ -5,6 +5,8 @@ NuPhy IO design system — an Apple / macOS–inspired settings UI kit for React
 **Demo:** [https://nuphy-design-system.vercel.app/](https://nuphy-design-system.vercel.app/)  
 **Repo:** [https://github.com/extrastu/nuphy-design-system](https://github.com/extrastu/nuphy-design-system)
 
+![NuPhy IO design system preview](./screen.png)
+
 ## Install
 
 ```bash

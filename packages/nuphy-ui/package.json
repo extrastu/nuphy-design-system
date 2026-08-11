@@ -1,6 +1,6 @@
 {
   "name": "@extrastu/nuphy-ui",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "NuPhy IO design system — Apple/macOS-inspired settings UI components with light & dark tokens.",
   "license": "MIT",
   "author": "extrastu",
@@ -10,7 +10,8 @@
   ],
   "files": [
     "dist",
-    "styles"
+    "styles",
+    "screen.png"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
